@@ -10,7 +10,7 @@ def database_init():
     while retries:
         try:
             conn = psycopg2.connect(
-                host='db',
+                host='database',
                 database='counter_db',
                 user='user',
                 password='password'
@@ -37,7 +37,7 @@ def database_init():
 def hello():
     try:
         conn = psycopg2.connect(
-            host='db',
+            host='database',
             database='counter_db',
             user='user',
             password='password'
