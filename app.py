@@ -48,13 +48,10 @@ def hello():
             (datetime.now(), request.headers.get('User-Agent'))
         )
         conn.commit()
-
         csr.execute("SELECT COUNT(*) FROM counter")
         count = csr.fetchone()[0]
-
         csr.close()
         conn.close()
-
         return f'Привет мир! Меня посмотрели {count} пользователей.\n'
     except Exception as e:
         return f"Ошибка: {e}\n"
